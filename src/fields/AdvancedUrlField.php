@@ -1,4 +1,8 @@
 <?php
+/**
+ * Advanced URL Field plugin for Craft 3.0
+ * @copyright Copyright Charlie Development
+ */
 
 namespace charliedevelopment\advancedurl\fields;
 
@@ -9,9 +13,15 @@ use craft\base\PreviewableFieldInterface;
 
 use yii\db\Schema;
 
+/**
+ * This field supports text that must match at least one of the configured URL types.
+ */
 class AdvancedUrlField extends Field implements PreviewableFieldInterface
 {
 
+	/**
+	 * @var array The possible options for allowed url types.
+	 */
 	const ALLOWED_URL_TYPES = [
 		'relative',
 		'absolute',
@@ -25,25 +35,41 @@ class AdvancedUrlField extends Field implements PreviewableFieldInterface
 	public $placeholder;
 
 	/**
-	 * @var array The set of url types allowed to be used.
+	 * @var array The set of url types allowed to be used within this field.
 	 */
 	public $urlTypes = [];
 
+	/**
+	 * @inheritdoc
+	 * @see craft\base\ComponentInterface
+	 */
 	public static function displayName(): string
 	{
 		return \Craft::t('advanced-url-field', 'Advanced Url');
 	}
 
+	/**
+	 * @inheritdoc
+	 * @see craft\base\Field
+	 */
 	public static function hasContentColumn(): bool
 	{
 		return true;
 	}
 
+	/**
+	 * @inheritdoc
+	 * @see craft\base\Field
+	 */
 	public function getContentColumnType(): string
 	{
 		return Schema::TYPE_STRING;
 	}
 
+	/**
+	 * @inheritdoc
+	 * @see craft\base\SavableComponentInterface
+	 */
 	public function getSettingsHtml(): string
 	{
 		return Craft::$app->getView()->renderTemplate(
@@ -54,6 +80,10 @@ class AdvancedUrlField extends Field implements PreviewableFieldInterface
 		);
 	}
 
+	/**
+	 * @inheritdoc
+	 * @see craft\base\Field
+	 */
 	public function rules(): array
 	{
 		$rules = parent::rules();
@@ -64,6 +94,10 @@ class AdvancedUrlField extends Field implements PreviewableFieldInterface
 		return $rules;
 	}
 	
+	/**
+	 * @inheritdoc
+	 * @see craft\base\Field
+	 */
 	public function getInputHtml($value, ElementInterface $element = null): string
 	{
 		return Craft::$app->getView()->renderTemplate('advanced-url-field/_input', [
@@ -72,6 +106,10 @@ class AdvancedUrlField extends Field implements PreviewableFieldInterface
 		]);
 	}
 
+	/**
+	 * @inheritdoc
+	 * @see craft\base\Field
+	 */
 	public function getElementValidationRules(): array
 	{
 		return [
