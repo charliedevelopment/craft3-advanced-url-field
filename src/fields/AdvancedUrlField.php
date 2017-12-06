@@ -11,6 +11,14 @@ use yii\db\Schema;
 
 class AdvancedUrlField extends Field implements PreviewableFieldInterface
 {
+
+	const ALLOWED_URL_TYPES = [
+		'relative',
+		'absolute',
+		'mailto',
+		'tel',
+	];
+
 	/**
 	 * @var string|null The input's placeholder text.
 	 */
@@ -38,10 +46,12 @@ class AdvancedUrlField extends Field implements PreviewableFieldInterface
 
 	public function getSettingsHtml(): string
 	{
-		return Craft::$app->getView()->renderTemplate('advanced-url-field/_settings',
+		return Craft::$app->getView()->renderTemplate(
+			'advanced-url-field/_settings',
 			[
 				'field' => $this,
-			]);
+			]
+		);
 	}
 
 	public function rules(): array
@@ -57,9 +67,9 @@ class AdvancedUrlField extends Field implements PreviewableFieldInterface
 	public function getInputHtml($value, ElementInterface $element = null): string
 	{
 		return Craft::$app->getView()->renderTemplate('advanced-url-field/_input', [
-				'field' => $this,
-				'value' => $value,
-			]);
+			'field' => $this,
+			'value' => $value,
+		]);
 	}
 
 	public function getElementValidationRules(): array
@@ -75,7 +85,7 @@ class AdvancedUrlField extends Field implements PreviewableFieldInterface
 	 * @return void
 	 */
 	public function validateUrl(ElementInterface $element)
-    {
+	{
 		$value = $element->getFieldValue($this->handle);
 
 		// Make sure the value matches at least one of the allowed types.

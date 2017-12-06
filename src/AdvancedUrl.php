@@ -13,6 +13,7 @@ use yii\base\Event;
 
 class AdvancedUrl extends Plugin
 {
+
 	public function init()
 	{
 		parent::init();
