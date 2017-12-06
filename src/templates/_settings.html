@@ -1,0 +1,26 @@
+{% import '_includes/forms' as forms %}
+
+{{ forms.textField({
+	label: 'Placeholder Text' | t('app'),
+    instructions: 'The text that will be shown if the field doesn’t have a value.' | t('app'),
+	id: 'placeholder',
+	name: 'placeholder',
+	value: field.placeholder,
+	translatable: true,
+	errors: field.getErrors('placeholder')
+}) }}
+
+{{ forms.checkboxGroupField({
+	label : 'URL Types' | t('advanced-url-field'),
+    instructions : 'Determines what kind of URLs are allowed in this field.' | t('advanced-url-field'),
+    id : 'urlTypes',
+	name : 'urlTypes',
+	required: 'true',
+	values: field.urlTypes,
+    options : {
+		'relative' : 'Relative URLs' | t('advanced-url-field'),
+		'absolute' : 'Absolute URLs' | t('advanced-url-field'),
+		'mailto' : 'Mailto Protocol' | t('advanced-url-field'),
+		'tel' : 'Tel Protocol' | t('advanced-url-field'),
+	}
+}) }}

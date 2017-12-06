@@ -1,0 +1,16 @@
+{% import '_includes/forms' as forms %}
+
+{# Create a set of classes representing the allowed url types. #}
+{% set classes = '' %}
+{% for type in field.urlTypes %}
+	{% set classes = classes ~ ' ' ~ type %}
+{% endfor %}
+
+{{ forms.text({
+	id : field.id,
+	name : field.name,
+	value : value,
+	class : classes,
+	maxlength: 2048,
+	placeholder: field.placeholder
+}) }}
