@@ -44,6 +44,16 @@ class AdvancedUrlField extends Field implements PreviewableFieldInterface
 			]);
 	}
 
+	public function rules(): array
+	{
+		$rules = parent::rules();
+		
+		$rules[] = [['urlTypes'], 'required'];
+		$rules[] = [['urlTypes'], 'in', 'range' => self::ALLOWED_URL_TYPES, 'allowArray' => true];
+		
+		return $rules;
+	}
+	
 	public function getInputHtml($value, ElementInterface $element = null): string
 	{
 		return Craft::$app->getView()->renderTemplate('advanced-url-field/_input', [
