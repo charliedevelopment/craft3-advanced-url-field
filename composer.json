@@ -22,7 +22,7 @@
 		"source": "https://github.com/charliedevelopment/Advanced-URL-Field"
 	},
 	"require": {
-		"craftcms/cms": "~3.0.0-beta"
+		"craftcms/cms": "^3.0.0-RC1"
 	},
 	"autoload": {
 		"psr-4": {
