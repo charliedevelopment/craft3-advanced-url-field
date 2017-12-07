@@ -4,14 +4,14 @@
  * @copyright Copyright Charlie Development
  */
 
-namespace charliedevelopment\advancedurl;
+namespace charliedev\advancedurl;
 
 use Craft;
 use craft\base\Plugin;
 use craft\events\RegisterComponentTypesEvent;
 use craft\services\Fields;
 
-use charliedevelopment\advancedurl\fields\AdvancedUrlField;
+use charliedev\advancedurl\fields\AdvancedUrlField;
 
 use yii\base\Event;
 

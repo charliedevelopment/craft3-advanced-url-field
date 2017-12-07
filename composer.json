@@ -1,12 +1,13 @@
 {
-	"name": "charliedevelopment/advanced-url-field",
+	"name": "charliedev/advanced-url-field",
 	"description": "Configurable URL field that provides multiple format restrictions and validation.",
 	"type": "craft-plugin",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"license": "MIT",
 	"authors": [
 		{
 			"name": "Charlie Development",
+			"email": "support@charliedev.com",
 			"homepage": "http://charliedev.com/"
 		}
 	],
@@ -18,23 +19,24 @@
 		"field"
 	],
 	"support": {
-		"issues": "https://github.com/charliedevelopment/Advanced-URL-Field/issues?state=open",
-		"source": "https://github.com/charliedevelopment/Advanced-URL-Field"
+		"issues": "https://github.com/charliedevelopment/craft3-advanced-url-field/issues?state=open",
+		"source": "https://github.com/charliedevelopment/craft3-advanced-url-field",
+		"email": "support@charliedev.com"
 	},
 	"require": {
 		"craftcms/cms": "^3.0.0-RC1"
 	},
 	"autoload": {
 		"psr-4": {
-			"charliedevelopment\\advancedurl\\": "src/"
+			"charliedev\\advancedurl\\": "src/"
 		}
 	},
 	"extra": {
 		"name": "Advanced Url Field",
 		"handle": "advanced-url-field",
-		"schemaVersion": "0.0.1",
+		"schemaVersion": "1.0.0",
 		"hasCpSettings": false,
 		"hasCpSection": false,
-		"class": "charliedevelopment\\advancedurl\\AdvancedUrl"
+		"class": "charliedev\\advancedurl\\AdvancedUrl"
 	}
 }

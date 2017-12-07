@@ -4,7 +4,7 @@ This plugin provides a field type that can be configured to only allow URLs that
 
 ## Requirements
 
-* Craft CMS 3.0.0-beta or above
+* Craft CMS 3.0.0-RC1 or above
 
 ## Installation
 

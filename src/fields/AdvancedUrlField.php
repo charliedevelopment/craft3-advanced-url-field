@@ -4,7 +4,7 @@
  * @copyright Copyright Charlie Development
  */
 
-namespace charliedevelopment\advancedurl\fields;
+namespace charliedev\advancedurl\fields;
 
 use Craft;
 use craft\base\ElementInterface;
