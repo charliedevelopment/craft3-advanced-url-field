@@ -8,7 +8,27 @@ This plugin provides a field type that can be configured to only allow URLs that
 
 ## Installation
 
-_TODO_
+1. Open a terminal and navigate to your project folder:
+
+```bash
+cd /path/to/project
+```
+
+2. Require the package to download it via Composer:
+
+```bash
+composer require charliedev/advanced-url-field
+```
+
+3. Install the plugin on the `Settings -> Plugins` page in the Craft control panel.
+
+**--- or ---**
+
+3. Install the plugin via the command line:
+
+```bash
+./craft install/plugin advanced-url-field
+```
 
 ## Usage
 
